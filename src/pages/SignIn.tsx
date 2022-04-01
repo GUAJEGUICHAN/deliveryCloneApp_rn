@@ -10,6 +10,7 @@ import {
 
 import {RootStackParamList} from '../../App';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import DismissKeyboardView from '../components/DissmissKeyboardView';
 // import DismissKeyboardView from '../components/DismissKeyboardView';
 
 const styles = StyleSheet.create({
@@ -74,7 +75,7 @@ export default function SignIn({navigation}: SignInScreenProps) {
   const canGoNext = email && password;
 
   return (
-    <>
+    <DismissKeyboardView>
       <View style={styles.inputWrapper}>
         <Text style={styles.label}>이메일</Text>
         <TextInput
@@ -126,6 +127,6 @@ export default function SignIn({navigation}: SignInScreenProps) {
           <Text>회원가입하기</Text>
         </Pressable>
       </View>
-    </>
+    </DismissKeyboardView>
   );
 }
